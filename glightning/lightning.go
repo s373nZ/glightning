@@ -1217,11 +1217,11 @@ type NodeInfo struct {
 }
 
 func (n *NodeInfo) IsBitcoindSync() bool {
-	return n.WarningBitcoinSync == ""
+	return n.WarningBitcoinSync == nil
 }
 
 func (n *NodeInfo) IsLightningdSync() bool {
-	return n.WarningLightningSync == ""
+	return n.WarningLightningSync == nil
 }
 
 type AddressInternal struct {
