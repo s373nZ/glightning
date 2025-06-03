@@ -11,9 +11,9 @@ PLUGINS = $(foreach p,$(TEST_PLUGIN_DIRS),$p/$(p:$(PLUGINS_DIR)/pl_%=%).go)
 all: build test-build
 
 build:
-	go build github.com/elementsproject/glightning/glightning
-	go build github.com/elementsproject/glightning/gbitcoin
-	go build github.com/elementsproject/glightning/jrpc2
+	go build github.com/s373nZ/glightning/glightning
+	go build github.com/s373nZ/glightning/gbitcoin
+	go build github.com/s373nZ/glightning/jrpc2
 
 test-build: $(PLUGINS)
 	@rm -rf $(TEST_PLUGINS_BUILD_DIR)
