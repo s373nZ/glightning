@@ -1212,16 +1212,16 @@ type NodeInfo struct {
 	FeesCollectedMilliSatoshis uint64            `json:"msatoshi_fees_collected,omitempty"`
 	FeesCollected              Amount            `json:"fees_collected_msat"`
 	LightningDir               string            `json:"lightning-dir"`
-	WarningBitcoinSync         string            `json:"warning_bitcoind_sync,omitempty"`
-	WarningLightningSync       string            `json:"warning_lightningd_sync,omitempty"`
+	WarningBitcoinSync         *string           `json:"warning_bitcoind_sync,omitempty"`
+	WarningLightningSync       *string           `json:"warning_lightningd_sync,omitempty"`
 }
 
 func (n *NodeInfo) IsBitcoindSync() bool {
-	return n.WarningBitcoinSync == nil
+	return n.WarningBitcoinSync == nil || *n.WarningBitcoinSync == ""
 }
 
 func (n *NodeInfo) IsLightningdSync() bool {
-	return n.WarningLightningSync == nil
+	return n.WarningLightningSync == nil || *n.WarningLightningSync == ""
 }
 
 type AddressInternal struct {
